@@ -1,4 +1,5 @@
 <html lang="fr">
+theme: THEME-NAME_config.ymljekyll-theme-NAMEtheme: jekyll-theme-minimal
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
