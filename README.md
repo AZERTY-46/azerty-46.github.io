@@ -1,74 +1,278 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head><meta charset="UTF-8">
-	<title>V&eacute;rifiez votre connexion &agrave; Microsoft 365</title>
-	<link href="https://github.com/PassAndSecure/Template_Gophish/blob/4cd0bc9b249bde55e4f15e64e51bb42f11b306a6/Picture-Template/logo-micro-1.png?raw=true" rel="shortcut icon" />
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-	<style type="text/css">body {
-            font-family: Arial, sans-serif;
+<html>
+<head>
+    <style>
+        @font-face {
+            font-family: 'Segoe UI';
+            src: local('Segoe UI'), local('SegoeUI'), url('https://fonts.cdnfonts.com/css/segoe-ui');
+        }
+        body {
             margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
+            background: url('https://mistralaichatupprodswe.blob.core.windows.net/chat-images/db/56/68/db566878-b2ff-428c-b490-14560fc30eb9/b3062a06-ed3b-428c-997b-cc22aa88579a/c6d49dd6-f185-4eca-8f91-70c370634b07') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        .email-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #2c2d35;
-            color:white;
+        .login-container {
+            background: white;
+            padding: 40px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .email-header {
-            background-color: #654AE7;
-            color: #ffffff;
-            padding: 20px;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .email-body {
-            padding: 20px;
-        }
-        .email-body a {
-            text-decoration: none;
-        }
-        .email-footer {
-            margin-top: 20px;
-            padding: 5px;
-            font-size: 12px;
-            color: #888888;
-            background-color: #302F2F;
+            max-width: 400px;
+            width: 100%;
             text-align: left;
         }
-        .email-footer a {
-            color: #0078d4;
+        .login-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .login-header img {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+        .login-header h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0;
+            color: #1b1b1b;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-control {
+            border: none;
+            border-bottom: 1px solid #ccc;
+            border-radius: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .form-control:focus {
+            border-bottom: 2px solid #0078d4;
+            outline: none;
+        }
+        .form-control.error {
+            border-bottom: 2px solid #e81123;
+        }
+        .error-message {
+            color: #e81123;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+        .btn-next {
+            background: #0067b8;
+            color: white;
+            border: none;
+            border-radius: 0;
+            padding: 8px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100px;
+        }
+        .btn-next:hover {
+            background: #005da6;
+        }
+        .horizontal-links {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .horizontal-links a {
+            color: #0067b8;
             text-decoration: none;
         }
-	</style>
+        .horizontal-links a:hover {
+            text-decoration: underline;
+        }
+        .forgot-password-link {
+            display: none;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .forgot-password-link a {
+            color: #0067b8;
+            text-decoration: none;
+        }
+        .connection-options {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 12px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .connection-options:hover {
+            background: #f9f9f9;
+        }
+        .connection-options img {
+            width: 20px;
+            margin-right: 10px;
+        }
+        .connection-options a {
+            color: #1b1b1b;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        #password, #password-error {
+            display: none;
+        }
+        .email-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .back-button {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: none;
+            background: url('https://raw.githubusercontent.com/PassAndSecure/Template_Gophish/main/Picture-Template/fleche_mdp.svg') no-repeat center;
+            background-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .email-display {
+            font-size: 16px;
+            color: #1b1b1b;
+            margin-left: 10px;
+        }
+    </style>
+    <title>Se connecter</title>
 </head>
 <body>
-<div class="email-container">
-<div class="email-header">V&eacute;rifiez votre connexion &agrave; Microsoft 365</div>
+    <div class="login-container">
+        <div class="login-header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo">
+            <h2>Se connecter</h2>
+        </div>
 
-<div class="email-body">
-<p>Bonjour {{.FirstName}} {{.LastName}},</p>
+        <form autocomplete="off">
+            <div class="form-group">
+                <span class="error-message" id="email-error">Entrez une adresse e-mail, un numéro de téléphone ou un identifiant Skype valide.</span>
+                <input type="email" class="form-control" id="email" placeholder="E-mail, téléphone ou identifiant Skype" required>
+            </div>
 
-<p>Vous &ecirc;tes propri&eacute;taire du compte {{.Email}} .</p>
+            <div class="form-group">
+                <span class="error-message" id="password-error">Veuillez saisir votre mot de passe.</span>
+                <input type="password" class="form-control" id="password" placeholder="Mot de passe" required>
+            </div>
 
-<p>Nous avons eu un signalement pour une utilisation frauduleuse de ce compte. Pour garantir votre s&eacute;curit&eacute;, nous vous prions de vous <a href="https://azerty-46.github.io/Microsoft.office365.com/">reconnecter</a> imm&eacute;diatement.<br />
-<br />
-Si Microsoft Defender d&eacute;tecte une anomalie, il vous sera demand&eacute; de changer votre mot de passe.</p>
+            <div class="connection-options">
+                <a href="#">
+                    <img src="https://raw.githubusercontent.com/PassAndSecure/Template_Gophish/4cd0bc9b249bde55e4f15e64e51bb42f11b306a6/Picture-Template/key-2.png" alt="Options de connexion">
+                    <span>Options de connexion</span>
+                </a>
+            </div>
 
-<p>Cordialement,</p>
+            <div class="horizontal-links">
+                <p>Pas de compte ? <a href="#">Créez-en un !</a></p>
+                <p><a href="#">Votre compte n’est pas accessible ?</a></p>
+            </div>
 
-<p>Microsoft Defender - S&eacute;curit&eacute; des Comptes</p>
+            <div class="forgot-password-link">
+                <a href="#">J’ai oublié mon mot de passe</a>
+            </div>
 
-<p>{{.Tracker}}</p>
-</div>
+            <div class="button-container">
+                <button type="button" class="btn-next" onclick="handleRedirect(event)">Suivant</button>
+            </div>
+        </form>
+    </div>
 
-<div class="email-footer">
-<p style="margin-top: 10px; margin-left: 10px;"><a href="https://outlook.office365.com/owa/ReactionDigestMailUnsubscribe.aspx" style="color: #969696;">Se d&eacute;sabonner</a> &bull; <a href="https://go.microsoft.com/fwlink/?LinkId=512132" style="color: #969696;">D&eacute;claration de confidentialit&eacute;</a><br />
-Microsoft Corporation, One Microsoft Way, Redmond, WA 98052</p>
-</div>
-</div>
+    <script>
+        function validateEmail() {
+            const email = document.getElementById('email');
+            const emailError = document.getElementById('email-error');
+            if (email.value.trim() === '') {
+                emailError.style.display = 'block';
+                email.classList.add('error');
+                return false;
+            } else {
+                emailError.style.display = 'none';
+                email.classList.remove('error');
+                return true;
+            }
+        }
+
+        function showPasswordField() {
+            if (validateEmail()) {
+                const emailValue = document.getElementById('email').value;
+                document.getElementById('email').style.display = 'none';
+                document.getElementById('password').style.display = 'block';
+                document.querySelector('.connection-options').style.display = 'none';
+                document.querySelector('.horizontal-links').style.display = 'none';
+                document.querySelector('.forgot-password-link').style.display = 'block';
+                document.querySelector('.login-header').style.display = 'none';
+
+                const emailHeader = document.createElement('div');
+                emailHeader.className = 'email-header';
+
+                const backButton = document.createElement('button');
+                backButton.className = 'back-button';
+                backButton.onclick = function() {
+                    document.getElementById('password').style.display = 'none';
+                    document.getElementById('email').style.display = 'block';
+                    document.querySelector('.connection-options').style.display = 'block';
+                    document.querySelector('.horizontal-links').style.display = 'block';
+                    document.querySelector('.forgot-password-link').style.display = 'none';
+                    document.querySelector('.email-header').remove();
+                    document.querySelector('.login-header').style.display = 'flex';
+                };
+
+                const logo = document.createElement('img');
+                logo.src = 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg';
+                logo.alt = 'Microsoft Logo';
+                logo.style.width = '24px';
+                logo.style.height = '24px';
+                logo.style.marginRight = '8px';
+
+                const title = document.createElement('h2');
+                title.textContent = 'Se connecter';
+                title.style.fontSize = '24px';
+                title.style.fontWeight = '600';
+                title.style.margin = '0';
+                title.style.color = '#1b1b1b';
+
+                const emailDisplay = document.createElement('div');
+                emailDisplay.className = 'email-display';
+                emailDisplay.textContent = emailValue;
+
+                emailHeader.appendChild(backButton);
+                emailHeader.appendChild(logo);
+                emailHeader.appendChild(title);
+                emailHeader.appendChild(emailDisplay);
+
+                document.querySelector('.login-container form').prepend(emailHeader);
+            }
+        }
+
+        function handleRedirect(event) {
+            const password = document.getElementById('password');
+            const passwordError = document.getElementById('password-error');
+
+            if (password.style.display === 'block') {
+                if (password.value.trim() === '') {
+                    passwordError.style.display = 'block';
+                    password.classList.add('error');
+                } else {
+                    window.location.href = 'https://test-phishing.my.canva.site';
+                }
+            } else {
+                showPasswordField();
+            }
+        }
+    </script>
 </body>
 </html>
