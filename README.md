@@ -8,12 +8,22 @@
         }
         body {
             margin: 0;
-            background: linear-gradient(135deg, #f0f7ff, #d9ecff);
+            background: url('https://wallpapercave.com/wp/wp4025066.jpg') no-repeat center center fixed;
+            background-size: cover;
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
         }
         .login-container {
             background: white;
@@ -22,6 +32,8 @@
             max-width: 400px;
             width: 100%;
             text-align: left;
+            position: relative;
+            z-index: 1;
         }
         .login-header {
             display: flex;
