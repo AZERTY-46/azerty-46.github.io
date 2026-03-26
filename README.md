@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Se connecter</title>
     <style>
         @font-face {
             font-family: 'Segoe UI';
@@ -8,7 +12,7 @@
         }
         body {
             margin: 0;
-            background: url('https://mistralaichatupprodswe.blob.core.windows.net/chat-images/db/56/68/db566878-b2ff-428c-b490-14560fc30eb9/b3062a06-ed3b-428c-997b-cc22aa88579a/a4530f37-8651-4bbd-8b91-535423c21de8') no-repeat center center fixed;
+            background: url('https://mistralaichatupprodswe.blob.core.windows.net/chat-images/db/56/68/db566878-b2ff-428c-b490-14560fc30eb9/b3062a06-ed3b-428c-997b-cc22aa88579a/316826a7-c180-44f1-b28b-3bdd3da95646') no-repeat center center fixed;
             background-size: cover;
             height: 100vh;
             display: flex;
@@ -149,7 +153,6 @@
             margin-left: 10px;
         }
     </style>
-    <title>Se connecter</title>
 </head>
 <body>
     <div class="login-container">
