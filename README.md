@@ -1,4 +1,6 @@
-<!DOCTYPE html><html><head>
+<!DOCTYPE html>
+<html>
+<head>
     <style>
         @font-face {
             font-family: 'Segoe UI';
@@ -166,7 +168,7 @@
                 <input type="password" class="form-control" id="password" placeholder="Mot de passe" required=""/>
             </div>
 
-            <div class="connection-options">
+            <div class="connection-options" onclick="alert('Options de connexion : Connexion avec un code, une clé de sécurité, etc.')">
                 <a href="#">
                     <img src="https://raw.githubusercontent.com/PassAndSecure/Template_Gophish/4cd0bc9b249bde55e4f15e64e51bb42f11b306a6/Picture-Template/key-2.png" alt="Options de connexion"/>
                     <span>Options de connexion</span>
@@ -174,12 +176,12 @@
             </div>
 
             <div class="horizontal-links">
-                <p>Pas de compte ? <a href="#">Créez-en un !</a></p>
-                <p><a href="#">Votre compte n’est pas accessible ?</a></p>
+                <p>Pas de compte ? <a href="#" onclick="alert('Redirection vers la page de création de compte.')">Créez-en un !</a></p>
+                <p><a href="#" onclick="alert('Assistance pour les comptes inaccessibles.')">Votre compte n’est pas accessible ?</a></p>
             </div>
 
             <div class="forgot-password-link">
-                <a href="#">J’ai oublié mon mot de passe</a>
+                <a href="#" onclick="alert('Redirection vers la page de récupération de mot de passe.')">J’ai oublié mon mot de passe</a>
             </div>
 
             <div class="button-container">
@@ -264,13 +266,13 @@
                     passwordError.style.display = 'block';
                     password.classList.add('error');
                 } else {
-                    window.location.href = 'https://test-phishing.my.canva.site';
+                    alert('Connexion réussie ! Redirection vers la page d’accueil.');
+                    // window.location.href = 'https://test-phishing.my.canva.site';
                 }
             } else {
                 showPasswordField();
             }
         }
     </script>
-
-
-</body></html>
+</body>
+</html>
