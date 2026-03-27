@@ -2,7 +2,8 @@
     <style>
         @font-face {
             font-family: 'Segoe UI';
-            src: local('Segoe UI'), local('SegoeUI'), url('https://fonts.cdnfonts.com/css/segoe-ui');
+            src: local('Segoe UI'), local('SegoeUI'),
+url('https://fonts.cdnfonts.com/css/segoe-ui');
         }
         body {
             margin: 0;
