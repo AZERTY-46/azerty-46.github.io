@@ -187,7 +187,7 @@
             background-size: contain;
             cursor: pointer;
         }
-        
+
         .back-button:hover {
             width: 24px;
             height: 24px;
@@ -198,7 +198,7 @@
             background-color:#F2F2F2;
             cursor: pointer;
         }
-        
+
         .email-display {
             font-size: 16px;
             font-family: Segoe UI, sans-serif;
@@ -247,7 +247,7 @@
                 const emailValue = document.getElementById('email').value;
 
                 document.querySelector('.button-container .btn-primary').style.display = 'none';
-                
+
                 document.getElementById('email').style.display = 'none';
                 document.getElementById('password').style.display = 'block';
                 document.getElementById('password-error').style.display = 'none';
@@ -261,7 +261,7 @@
                 document.querySelector('.login-header').style.marginBottom = '-25px';
 
                 document.querySelector("button[type='submit']").textContent = "Se connecter";
-                
+
                 const emailContainer = document.createElement('div');
                 emailContainer.classList.add('email-container');
 
@@ -274,7 +274,7 @@
                     document.querySelector('.login-header img').src = 'https://raw.githubusercontent.com/PassAndSecure/Template_Gophish/4cd0bc9b249bde55e4f15e64e51bb42f11b306a6/Picture-Template/microsoft_logo.svg';
 
                     document.querySelector('.login-header').style.marginBottom = '0px';
-                
+
                     document.querySelector('.login-header').removeChild(document.querySelector('.email-container'));
 
                     document.querySelector('.button-container .btn-primary').style.display = 'inline-block';
@@ -293,15 +293,15 @@
 
                 emailContainer.appendChild(backButton);
                 emailContainer.appendChild(emailDisplay);
-                
+
                 document.querySelector('.login-header').insertBefore(emailContainer, document.querySelector('.login-header p'));
 
                 document.querySelector('.forgot-password-link').style.display = 'block';
 
                 document.querySelector('.horizontal-links').style.display = 'none';
-                
+
                 document.querySelector('.div-option-connexion').style.display = 'none';
-                
+
                 document.querySelector('.login-container').after(footer);
             }
         }
@@ -378,12 +378,3 @@
     </div>
 </body>
 </html>
-<!------.-. .-')         (`-.    _  .-')   
-        \  ( OO )      _(OO  )_ ( \( -O )  
-        ,--. ,--.  ,--(_/   ,. \ ,------.  
-        |  .'   /  \   \   /(__/ |   /`. ' 
-        |      /,   \   \ /   /  |  /  | | 
-        |     ' _)   \   '   /,  |  |_.' | 
-        |  .   \      \     /__) |  .  '.' 
-        |  |\   \      \   /     |  |\  \  
-        `--' '--'       `-'      `--' '--'------->  
